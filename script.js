@@ -80,5 +80,5 @@ window.addEventListener('scroll', () => {
     }
 })
 
-// On Load
+// On Loading
 getPhotos()
