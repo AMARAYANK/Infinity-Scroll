@@ -8,7 +8,7 @@ let photosArray = []
 
 // Unsplash API
 const apiKey= 'Uu5nrf2M2FxEaKcL1RyuogRkL3hRAmCrgSvq2q0l91Q'
-const count = 10
+const count = 5
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`
 
 function setAttributes(element, attributes){
@@ -24,6 +24,8 @@ function imageLoaded() {
   if(imagesLoaded === totalImages){
       ready = true
       loader.hidden = true
+      count = 20
+      apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`
   }
 }
 
