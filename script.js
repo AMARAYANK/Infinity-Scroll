@@ -21,10 +21,9 @@ function setAttributes(element, attributes){
 
 function imageLoaded() {
   imagesLoaded++
-  console.log(imagesLoaded)
   if(imagesLoaded === totalImages){
       ready = true
-      console.log('ready = ', ready)
+      loader.hidden = true
   }
 }
 
@@ -34,9 +33,6 @@ function imageLoaded() {
 function displayPhotos() {
    totalImages = photosArray.length
    imagesLoaded = 0   
-   console.log('total images', totalImages)
-//    console.log('ready new', ready)
-
     // Run function for each element in photos array
     photosArray.forEach((photo) => {
         // Create <a> to link to Unsplash
@@ -80,13 +76,9 @@ async function getPhotos() {
 window.addEventListener('scroll', () => {
     if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000 && ready) {
         ready = false;
-        console.log('load')
         getPhotos()
     }
 })
 
-
-
 // On Load
-
 getPhotos()
